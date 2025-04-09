@@ -23,6 +23,22 @@ async function translate(text, lang, flag) {
     translationFlag.innerText = flag;
 }
 
+    // Cambia lo sfondo in base alla lingua
+    const body = document.body;
+    switch (lang) {
+        case 'en': // Inglese
+            body.style.backgroundImage = "url('./images/united-kingdom.png')";
+            break;
+        case 'fr': // Francese
+            body.style.backgroundImage = "url('./images/france.png')";
+            break;
+        case 'es': // Spagnolo
+            body.style.backgroundImage = "url('./images/spain.png')";
+            break;
+        
+    }
+
+
 // attaccare eventi ai bottoni
 resetButton.addEventListener('click', reset);
 
@@ -38,4 +54,4 @@ langButtons.forEach(button => {
             translate(text, lang, flag);
         }
     })
-});
+}); 
